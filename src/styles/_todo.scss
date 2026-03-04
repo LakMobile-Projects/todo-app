@@ -1,33 +1,141 @@
 .navbar {
-  background-color: #222; // Example styling
-  padding: 1rem;
+  background: $glass-bg;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid $glass-border;
+  padding: 1.25rem 2rem;
   display: flex;
-  justify-content: space-between; // Horizontally centers the H1
-  align-items: center; // Vertically centers the H1
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: $radius-xl;
+  margin-bottom: 2rem;
+  box-shadow: $shadow-lg;
+  width: 100%;
 
   &__title {
-    color: white;
-    margin: 0;
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, $primary-light, $primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
   }
+
   &__button {
-    background-color: #ffffff; // Green
+    background: linear-gradient(135deg, $primary, $primary-light);
     border: none;
-    color: rgb(0, 0, 0);
-    padding: 10px 15px;
-    text-align: center;
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 0.25rem;
-    cursor: pointer;
-    border-radius: 5px;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: $radius;
+    box-shadow: 0 4px 12px rgba($primary, 0.3);
 
     &:hover {
-      background-color: #727272;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba($primary, 0.4);
+      filter: brightness(1.1);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.todo-list {
+  background: $surface-dark;
+  border: 1px solid $glass-border;
+  border-radius: $radius-xl;
+  padding: 1.5rem;
+  box-shadow: $shadow-lg;
+  overflow: hidden;
+}
+
+.todo-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  th {
+    padding: 1rem;
+    text-align: left;
+    color: $text-dim;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid $glass-border;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 1.25rem 1rem;
+    color: $text-light;
+    border-bottom: 1px solid rgba($glass-border, 0.5);
+    font-size: 0.95rem;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+
+    &.complete {
+      background: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    &.incomplete {
+      background: rgba(245, 158, 11, 0.1);
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .edit-button,
+  .delete-button {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+
+  .edit-button {
+    background: rgba($primary, 0.1);
+    color: $primary-light;
+    border-color: rgba($primary, 0.2);
+
+    &:hover {
+      background: $primary;
+      color: white;
+    }
+  }
+
+  .delete-button {
+    background: rgba($accent, 0.1);
+    color: $accent;
+    border-color: rgba($accent, 0.2);
+
+    &:hover {
+      background: $accent;
       color: white;
     }
   }

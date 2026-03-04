@@ -1,7 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 @import "./variables";
 @import "./todo";
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #e5e7eb;
+  font-family: "Poppins", sans-serif;
+  background-color: $bg-dark;
+  color: $text-light;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.container-md {
+  width: auto;
+  max-width: max-content;
+  margin: 0 auto;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
 }

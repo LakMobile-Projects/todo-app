@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/_todo.scss";
 
 const Navbar = () => {
   return (
