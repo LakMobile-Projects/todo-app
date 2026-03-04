@@ -1,0 +1,34 @@
+.navbar {
+  background-color: #222; // Example styling
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between; // Horizontally centers the H1
+  align-items: center; // Vertically centers the H1
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  &__title {
+    color: white;
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+  &__button {
+    background-color: #ffffff; // Green
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0.25rem;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #727272;
+      color: white;
+    }
+  }
+}
